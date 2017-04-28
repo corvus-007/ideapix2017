@@ -1,0 +1,17 @@
+.logo {
+
+}
+
+.logo__link {
+  transition: color $duration;
+  color: $accent-color;
+
+  &:hover,
+  &:focus {
+    color: #0d7;
+  }
+}
+
+.logo__image {
+  fill: currentColor;
+}

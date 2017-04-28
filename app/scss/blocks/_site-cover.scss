@@ -1,0 +1,41 @@
+.site-cover {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 2;
+  transform: translateX(-100%);
+  background-color: #436;
+  transition: transform 0.35s ease;
+  pointer-events: none;
+  box-sizing: border-box;
+
+  &--opened {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+}
+
+.site-cover__inner {
+  display: flex;
+  height: 100%;
+}
+
+.site-cover__column {
+  padding: 100px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
+  &--left {
+    width: 60%;
+    background-color: #546E7A;
+  }
+
+  &--right {
+    width: 40%;
+    background-color: #009688;
+  }
+
+}

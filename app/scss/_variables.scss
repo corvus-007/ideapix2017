@@ -1,0 +1,50 @@
+// Colors
+$base-color: #232020;
+$accent-color: #4cc9ff;
+
+$success-color: #11fd6d;
+$info-color: #b9dfff;
+$warning-color: #edf512;
+$danger-color: #fd0d4d;
+
+$light-color: #e4e4e4;
+$muted-color: #7a7a7a;
+$link-color: $accent-color;
+
+
+// Fonts
+$font-size: 16px;
+$font-size--small: 12px;
+$font-size--large: 20px;
+$primary-font: "Akrobat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$secondary-font: inherit;
+
+
+$border-radius: 2px;
+$duration: 0.25s;
+
+// Grid
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+// Media querys
+$xs-width: 0;
+$sm-width: 568px;
+$md-width: 768px;
+$lg-width: 992px;
+$xl-width: 1200px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 568px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$grid-max-widths: (
+  sm: none,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);

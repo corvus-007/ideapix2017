@@ -1,0 +1,13 @@
+.nav-toggler {
+  @include createButton();
+
+  display: inline-flex;
+  align-items: center;
+  padding: 5px;
+  background-color: transparent;
+
+}
+
+.nav-toggler__icon {
+  margin-right: 0.25em;
+}

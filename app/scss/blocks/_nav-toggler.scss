@@ -4,8 +4,11 @@
   display: inline-flex;
   align-items: center;
   padding: 5px;
+  font-weight: normal;
+  font-size: 1rem;
+  text-transform: none;
+  color: $accent-color;
   background-color: transparent;
-
 }
 
 .nav-toggler__icon {

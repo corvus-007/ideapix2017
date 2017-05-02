@@ -1,5 +1,5 @@
 // Colors
-$base-color: #232020;
+$base-color: #fff;
 $accent-color: #4cc9ff;
 
 $success-color: #11fd6d;
@@ -7,17 +7,20 @@ $info-color: #b9dfff;
 $warning-color: #edf512;
 $danger-color: #fd0d4d;
 
+$gray-color-190: #bebebe;
+
 $light-color: #e4e4e4;
+$dark-color: #212324;
 $muted-color: #7a7a7a;
 $link-color: $accent-color;
 
 
 // Fonts
-$font-size: 16px;
+$font-size: 18px;
 $font-size--small: 12px;
 $font-size--large: 20px;
-$primary-font: "Akrobat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-$secondary-font: inherit;
+$primary-font: "journalsanscyrillic", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$secondary-font: "GraphikLCG", "Arial Black", "Arial Bold", "Gadget", sans-serif;
 
 
 $border-radius: 2px;

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Главная – ideapix2017</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,53 +21,125 @@
       </div>
     </div>
     @@include('blocks/site-header.html')
-    <main class="site-main">
-      <div class="container">
-        <style scoped>
-          .container {
-            border: 4px solid #18898A;
-          }
-          .row {
-            border: 3px dashed #EC6D5F;
-          }
-          [class*="col-"] {
-            border: 2px solid #11FDEC;
-          }
-        </style>
-        <div class="row">
-          <div class="col-12"><code><pre>.col-12</pre></code></div>
-          <div class="col-6"><code><pre>.col-6</pre></code></div>
-          <div class="col-6"><code><pre>.col-6</pre></code></div>
-          <div class="col-4"><code><pre>.col-4</pre></code></div>
-          <div class="col-4"><code><pre>.col-4</pre></code></div>
-          <div class="col-4"><code><pre>.col-4</pre></code></div>
-          <div class="col-3"><code><pre>.col-3</pre></code></div>
-          <div class="col-3"><code><pre>.col-3</pre></code></div>
-          <div class="col-3"><code><pre>.col-3</pre></code></div>
-          <div class="col-3"><code><pre>.col-3</pre></code></div>
-          <div class="col-2"><code><pre>.col-2</pre></code></div>
-          <div class="col-2"><code><pre>.col-2</pre></code></div>
-          <div class="col-2"><code><pre>.col-2</pre></code></div>
-          <div class="col-2"><code><pre>.col-2</pre></code></div>
-          <div class="col-2"><code><pre>.col-2</pre></code></div>
-          <div class="col-2"><code><pre>.col-2</pre></code></div>
-          <div class="col-1"><code><pre>.col-1</pre></code></div>
-          <div class="col-1"><code><pre>.col-1</pre></code></div>
-          <div class="col-1"><code><pre>.col-1</pre></code></div>
-          <div class="col-1"><code><pre>.col-1</pre></code></div>
-          <div class="col-1"><code><pre>.col-1</pre></code></div>
-          <div class="col-1"><code><pre>.col-1</pre></code></div>
-          <div class="col-1"><code><pre>.col-1</pre></code></div>
-          <div class="col-1"><code><pre>.col-1</pre></code></div>
-          <div class="col-1"><code><pre>.col-1</pre></code></div>
-          <div class="col-1"><code><pre>.col-1</pre></code></div>
-          <div class="col-1"><code><pre>.col-1</pre></code></div>
-          <div class="col-1"><code><pre>.col-1</pre></code></div>
-          <div class="col-md-7"><code><pre>.col-md-7</pre></code></div>
-          <div class="col-md-5"><code><pre>.col-md-5</pre></code></div>
+    <!-- Slider main container -->
+    <div class="hello">
+      <div class="hello-overlay">
+        <video class="hello-overlay__video" preload="metadata" autoplay loop muted>
+          <!-- <source src="hello-video.webm" type="video/webm"> -->
+          <!-- <source src="hello-video.mp4" type="video/mp4"> -->
+          <source src="Spacious.webm" type="video/webm">
+          <source src="Spacious.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hello-slider swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <div class="hello-slide swiper-slide">
+            <div class="hello-slide__inner">
+              <div class="hello-slide__row">
+                <b class="hello-slide__title">5 лет <br> на рынке</b>
+                <div class="hello-slide__text">
+                  <p>Идея Пикс — интерактивное агентство, повышающее ваши продажи. Мы создаем, продвигаем и сопровождаем сайты уже более 5 лет. Проводим рекламные кампании в социальных сетях.</p>
+                  <a class="hello-slide__link" href="#">Наши работы</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hello-slide swiper-slide">
+            <div class="hello-slide__inner">
+              <div class="hello-slide__row">
+                <b class="hello-slide__title">15 лет <br> на стройке</b>
+                <div class="hello-slide__text">
+                  <p>Идея Пикс — крафти сколько можешь.</p>
+                  <a class="hello-slide__link" href="#">Наши работы</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hello-slide swiper-slide">
+            <div class="hello-slide__inner">
+              <div class="hello-slide__row">
+                <b class="hello-slide__title">20 лет <br> на даче</b>
+                <div class="hello-slide__text">
+                  <p>Идея Пикс — сажай сколько хочешь.</p>
+                  <a class="hello-slide__link" href="#">Наши работы</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="container">
+          <div class="hello-slider__pagination swiper-pagination"></div>
         </div>
       </div>
-    </main>
+      <div class="hello-reviews">
+        <div class="hello-reviews__list">
+          <div class="hello-reviews__item hello-reviews__item--active">
+            <div class="hello-reviews__headline">
+              <span class="hello-reviews__reload">Следующая цитата</span>
+              <b class="hello-reviews__name">Центр обучения кадров ДОАО «Центрэнергогаз»</b>
+            </div>
+            <blockquote class="hello-reviews__message">
+              <p>Все поставленные нами задачи были выполнены профессионально</p>
+            </blockquote>
+          </div>
+          <div class="hello-reviews__item">
+            <div class="hello-reviews__headline">
+              <span class="hello-reviews__reload">Следующая цитата</span>
+              <b class="hello-reviews__name">Inchcape</b>
+            </div>
+            <blockquote class="hello-reviews__message">
+              <p>Ожидаемый результат и&nbsp;получаемый &mdash;&nbsp;100&nbsp;из&nbsp;100</p>
+            </blockquote>
+          </div>
+          <div class="hello-reviews__item">
+            <div class="hello-reviews__headline">
+              <span class="hello-reviews__reload">Следующая цитата</span>
+              <b class="hello-reviews__name">SCJohnson</b>
+            </div>
+            <blockquote class="hello-reviews__message">
+              <p>Промо делает как надо!</p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="entry-case entry-case--dark entry-case--greenwood" style="background-image: url(https://images.unsplash.com/photo-1492760336186-393131b9a321?dpr=1&auto=format&fit=crop&w=1500&h=1001&q=80&cs=tinysrgb&crop=&bg=);">
+      <div class="entry-case__inner">
+        <h2 class="entry-case__title">
+          Клубный квартал<br>
+          «Гринвуд»
+        </h2>
+        <a class="entry-case__link button button--dark" href="#">
+          смотреть кейс
+        </a>
+      </div>
+    </section>
+
+    <section class="entry-case" style="background-image: url(https://images.unsplash.com/photo-1434608519344-49d77a699e1d?dpr=1&auto=format&fit=crop&w=1500&h=996&q=80&cs=tinysrgb&crop=&bg=);">
+      <div class="entry-case__inner">
+        <h2 class="entry-case__title">
+          Сетевой спортивный клуб<br>
+          «Доберман»
+        </h2>
+        <a class="entry-case__link button" href="#">
+          смотреть кейс
+        </a>
+      </div>
+    </section>
+
+    <section class="entry-case" style="background-image: url(https://images.unsplash.com/photo-1471015060382-6cbd8b4e34d0?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=);">
+      <div class="entry-case__inner">
+        <h2 class="entry-case__title">
+          Сайт депутата Брянской обл. Думы — А. В. Невструева
+        </h2>
+        <a class="entry-case__link button" href="#">
+          смотреть кейс
+        </a>
+      </div>
+    </section>
     @@include('blocks/site-footer.html')
     @@include('blocks/site-scripts.html')
   </div>

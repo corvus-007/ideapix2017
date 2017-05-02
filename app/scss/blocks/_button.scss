@@ -1,50 +1,50 @@
-@mixin buttonColor($bgColor: $buttonColorDefault, $textColor: #fff) {
-
-  color: $textColor;
-  background-color: $bgColor;
-
-  &:hover,
-  &:focus {
-    color: $textColor;
-    background-color: mix(#fff, $bgColor, 7%);
-    outline: none;
-  }
-
-  &:active {
-    color: $textColor;
-    background-color: mix(#000, $bgColor, 7%);
-  }
-}
-
 @mixin createButton() {
   display: inline-block;
-  padding: em(13, 20) em(33, 20);
-  border: 2px solid transparent;
+  padding: 16px 45px;
   text-align: center;
   font-family: inherit;
-  font-size: rem(20);
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: normal;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
   line-height: normal;
   outline: none;
   user-select: none;
+  border: 3px solid transparent;
+  border-radius: 60px;
   box-sizing: border-box;
-  transition: background-color 0.2s, color 0.2s;
+  transition: $duration;
   cursor: pointer;
-
-  &--small {
-    font-size: rem(15);
-    padding: em(14, 15) em(25, 15);
-  }
-
 }
 
 .button {
   @include createButton();
-  @include buttonColor($accent-color, $base-color);
+
+  color: $base-color;
+  border-color: $base-color;
+
+  &:hover,
+  &:focus {
+    color: $dark-color;
+    background-color: $base-color;
+  }
+
+  &:active {
+    border-color: $dark-color;
+  }
 }
 
 .button--dark {
-  @include buttonColor(#2c2929);
+  color: $dark-color;
+  border-color: $dark-color;
+
+  &:hover,
+  &:focus {
+    color: $base-color;
+    background-color: $dark-color;
+  }
+
+  &:active {
+    border-color: $base-color;
+  }
 }

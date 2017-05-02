@@ -13,4 +13,56 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+
+  /*=====================================
+  =            Hello reviews            =
+  =====================================*/
+
+  var helloReviews = document.querySelector('.hello-reviews');
+  var helloReviewsItems = helloReviews.querySelectorAll('.hello-reviews__item');
+  var helloReviewsItemsCount = (helloReviewsItems.length - 1);
+
+  $(helloReviews).on('click', '.hello-reviews__reload', function() {
+    var $self = $(this);
+    var $helloReview = $self.closest('.hello-reviews__item');
+    var helloReviewIndex = $helloReview.index();
+
+    if (helloReviewIndex < helloReviewsItemsCount) {
+      helloReviewIndex++;
+    } else {
+      helloReviewIndex = 0;
+    }
+
+    $(helloReviewsItems).removeClass('hello-reviews__item--active');
+    helloReviewsItems[helloReviewIndex].classList.add('hello-reviews__item--active');
+  });
+
+  /*=====  End of Hello reviews  ======*/
+
+
+
+
+  /*====================================
+  =            Hello slider            =
+  ====================================*/
+
+  var helloSlider = new Swiper('.hello-slider', {
+    speed: 600,
+    // loop: true,
+    effect: 'coverflow',
+    pagination: '.hello-slider__pagination',
+    paginationClickable: true,
+    slidesPerView: 'auto',
+    coverflow: {
+      rotate: 60,
+      stretch: 0,
+      depth: 100,
+      modifier: 2,
+      slideShadows: false
+    }
+  })
+
+  /*=====  End of Hello slider  ======*/
+
+
 });

@@ -1,6 +1,10 @@
 .site-header {
-  position: relative;
-  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  z-index: 15;
 }
 
 .site-header__inner {

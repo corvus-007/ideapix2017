@@ -8,8 +8,14 @@ body {
   font-size: 100%;
   font-weight: normal;
   line-height: normal;
-  background-color: #232424;
-  color: $base-color;
+  // color: $black-color;
+  color: $dark-color;
+  background-color: $white-color;
+}
+
+.homepage {
+  background: $dark-color;
+  color: $white-color;
 }
 
 .container {
@@ -26,7 +32,7 @@ a {
   }
 
   &:hover {
-    color: mix(#000, $link-color, 10%);
+    color: $link-color--hover;
   }
 }
 
@@ -34,8 +40,10 @@ h1,
 h2,
 h3,
 h4 {
-  margin-top: 0.7em;
+  margin-top: 1.5em;
   margin-bottom: 0.5em;
+  line-height: 1.2;
+  color: $dark-color;
 }
 
 h1,
@@ -59,9 +67,11 @@ h4,
 }
 
 
-p {
+p,
+ul,
+ol {
   margin-top: 0;
-  margin-bottom: 0.6em;
+  margin-bottom: 1em;
 }
 
 img {

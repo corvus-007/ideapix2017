@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Проект – ideapix2017</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="site-wrapper">
+    @@include('blocks/site-cover.html')
+    @@include('blocks/site-header.html')
+
+    <main class="main">
+      <div class="project">
+        <div class="project__intro">
+          <div class="project__image-wrapper">
+            <img class="project__image" src="https://images.unsplash.com/photo-1481624362406-b7817fa45ecf?dpr=1&auto=format&fit=crop&w=767&h=511&q=80&cs=tinysrgb&crop=&bg=" alt="Российский литературный портал">
+          </div>
+          <div class="project__overview">
+            <h1 class="project__title">
+              Российский литературный портал
+            </h1>
+            <p class="project__description">
+              700 000 авторов опубликовали 34 000 000 произведений.
+            </p>
+          </div>
+        </div>
+        <div class="project__item">
+          <img src="https://images.unsplash.com/photo-1439209306665-700c9bca794c?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=" alt="" class="project__item-image">
+        </div>
+        <div class="project__item">
+          <img src="https://images.unsplash.com/photo-1448454050639-2f8d4bf26975?dpr=1&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=&bg=" alt="" class="project__item-image">
+        </div>
+        <div class="project__item">
+          <img src="https://images.unsplash.com/photo-1488867605300-0380106bc701?dpr=1&auto=format&fit=crop&w=1500&h=2335&q=80&cs=tinysrgb&crop=&bg=" alt="" class="project__item-image">
+        </div>
+        <div class="project__item">
+          <img src="https://images.unsplash.com/photo-1451195090173-2e0781d7c33e?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=" alt="" class="project__item-image">
+        </div>
+      </div>
+    </main>
+
+    @@include('blocks/site-footer.html')
+    @@include('blocks/site-scripts.html')
+  </div>
+</body>
+</html>

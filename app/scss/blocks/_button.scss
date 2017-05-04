@@ -17,16 +17,14 @@
   cursor: pointer;
 }
 
-.button {
-  @include createButton();
-
-  color: $base-color;
-  border-color: $base-color;
+@mixin createButtonColors() {
+  color: $white-color;
+  border-color: $white-color;
 
   &:hover,
   &:focus {
     color: $dark-color;
-    background-color: $base-color;
+    background-color: $white-color;
   }
 
   &:active {
@@ -34,17 +32,40 @@
   }
 }
 
-.button--dark {
+@mixin createButtonColorsDark() {
   color: $dark-color;
   border-color: $dark-color;
 
   &:hover,
   &:focus {
-    color: $base-color;
+    color: $white-color;
     background-color: $dark-color;
   }
 
   &:active {
-    border-color: $base-color;
+    border-color: $white-color;
+  }
+}
+
+.button {
+  @include createButton();
+  @include createButtonColors();
+
+  &--dark {
+    @include createButtonColorsDark();
+  }
+}
+
+.button__icon {
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+
+  &:first-child {
+    margin-right: 0.5em;
+  }
+
+  &:last-child {
+    margin-left: 0.5em;
   }
 }

@@ -1,19 +1,14 @@
-.main-nav {
-
+.secondary-nav {
+  margin-top: 10%;
 }
 
-.main-nav__list {
+.secondary-nav__list {
   @include clear-list();
 
   li {
-    margin-bottom: 5vh;
-    font-size: 64px;
-    font-family: $secondary-font;
+    margin-bottom: 10px;
+    font-size: 16px;
     color: $dark-color;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   a {

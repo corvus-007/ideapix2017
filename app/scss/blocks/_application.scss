@@ -1,0 +1,25 @@
+.application {
+
+}
+
+.application__link {
+  text-align: center;
+  display: block;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  font-size: 36px;
+  font-family: $secondary-font;
+  color: $white-color;
+  background-color: $accent-color;
+  transition: $duration ease;
+
+  &:hover,
+  &:focus {
+    color: $white-color;
+    background-color: $link-color--hover;
+  }
+}
+
+.application__link-text {
+  border-bottom: 1px solid;
+}

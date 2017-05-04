@@ -1,0 +1,30 @@
+.address {
+  justify-content: space-around;
+}
+
+.address__group {
+  margin-bottom: ($grid-gutter-width * 3);
+  font-size: $font-size--large;
+}
+
+.address__title {
+  margin: 0;
+  margin-bottom: ($grid-gutter-width / 2);
+  font-size: 1.3em;
+  // font-weight: normal;
+}
+
+.address__list {
+  @include clear-list();
+
+  line-height: 1.5;
+
+  a {
+    color: currentColor;
+    border: none;
+  }
+}
+
+.address__socials {
+  justify-content: flex-start;
+}

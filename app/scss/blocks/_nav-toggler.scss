@@ -1,16 +1,27 @@
 .nav-toggler {
   @include createButton();
 
-  display: inline-flex;
-  align-items: center;
+  position: relative;
   padding: 5px;
+  padding-left: 40px;
   font-weight: normal;
   font-size: 1rem;
   text-transform: none;
   color: $accent-color;
   background-color: transparent;
+  user-select: none;
 }
 
 .nav-toggler__icon {
+  position: absolute;
+  top: -1px;
+  left: 0;
   margin-right: 0.25em;
+  fill: currentColor;
+  transition: $duration;
+
+  &--hidden {
+    opacity: 0;
+    transform: scale(0.2);
+  }
 }

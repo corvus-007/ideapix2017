@@ -1,10 +1,10 @@
 .entry-case {
   background-position: 50% 50%;
   background-size: cover;
-  background-color: #78d;
+  // background-color: #78d;
 
   &--dark {
-    background-color: #7ed;
+    background-color: $light-color;
     color: $dark-color;
   }
 

@@ -8,27 +8,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="homepage">
   <div class="site-wrapper">
-    <div class="site-cover">
-      <div class="site-cover__inner">
-        <div class="site-cover__column site-cover__column--left">
-          @@include('blocks/main-nav.html')
-        </div>
-        <div class="site-cover__column site-cover__column--right">
-
-        </div>
-      </div>
-    </div>
+    @@include('blocks/site-cover.html')
     @@include('blocks/site-header.html')
     <!-- Slider main container -->
     <div class="hello">
       <div class="hello-overlay">
         <video class="hello-overlay__video" preload="metadata" autoplay loop muted>
-          <!-- <source src="hello-video.webm" type="video/webm"> -->
-          <!-- <source src="hello-video.mp4" type="video/mp4"> -->
-          <source src="Spacious.webm" type="video/webm">
-          <source src="Spacious.mp4" type="video/mp4">
+          <source src="Very-Open-Space.webm" type="video/webm">
+          <source src="Very-Open-Space.mp4" type="video/mp4">
         </video>
       </div>
       <div class="hello-slider swiper-container">
@@ -50,7 +39,7 @@
               <div class="hello-slide__row">
                 <b class="hello-slide__title">15 лет <br> на стройке</b>
                 <div class="hello-slide__text">
-                  <p>Идея Пикс — крафти сколько можешь.</p>
+                  <p>Идея Пикс — крафти сколько сможешь.</p>
                   <a class="hello-slide__link" href="#">Наши работы</a>
                 </div>
               </div>
@@ -61,7 +50,7 @@
               <div class="hello-slide__row">
                 <b class="hello-slide__title">20 лет <br> на даче</b>
                 <div class="hello-slide__text">
-                  <p>Идея Пикс — сажай сколько хочешь.</p>
+                  <p>Идея Пикс — сажай сколько захочешь.</p>
                   <a class="hello-slide__link" href="#">Наши работы</a>
                 </div>
               </div>
@@ -113,7 +102,10 @@
           «Гринвуд»
         </h2>
         <a class="entry-case__link button button--dark" href="#">
-          смотреть кейс
+          <span>смотреть кейс</span>
+          <svg class="button__icon" width="11" height="20">
+            <use xlink:href="images/symbols.svg#chevron-right"></use>
+          </svg>
         </a>
       </div>
     </section>
@@ -125,7 +117,10 @@
           «Доберман»
         </h2>
         <a class="entry-case__link button" href="#">
-          смотреть кейс
+          <span>смотреть кейс</span>
+          <svg class="button__icon" width="11" height="20">
+            <use xlink:href="images/symbols.svg#chevron-right"></use>
+          </svg>
         </a>
       </div>
     </section>
@@ -136,8 +131,64 @@
           Сайт депутата Брянской обл. Думы — А. В. Невструева
         </h2>
         <a class="entry-case__link button" href="#">
-          смотреть кейс
+          <span>смотреть кейс</span>
+          <svg class="button__icon" width="11" height="20">
+            <use xlink:href="images/symbols.svg#chevron-right"></use>
+          </svg>
         </a>
+      </div>
+    </section>
+
+    <section class="our-clients">
+      <div class="our-clients__inner">
+        <h2 class="our-clients__title">
+          Выбор <br>
+          профессионалов рынка
+        </h2>
+        <ul class="our-clients__list">
+          <li class="our-clients__item">
+            <img src="images/our-clients/greenwood.png" srcset="images/our-clients/greenwood@2x.png 2x" alt="" />
+          </li>
+          <li class="our-clients__item">
+            <img src="images/our-clients/bryansk-stroka.png" srcset="images/our-clients/bryansk-stroka@2x.png 2x" alt="" />
+          </li>
+          <li class="our-clients__item">
+            <img src="images/our-clients/pushkin-plaza.png" srcset="images/our-clients/pushkin-plaza@2x.png 2x" alt="" />
+          </li>
+          <li class="our-clients__item">
+            <img src="images/our-clients/bodryy-den.png" srcset="images/our-clients/bodryy-den@2x.png 2x" alt="" />
+          </li>
+          <li class="our-clients__item">
+            <img src="images/our-clients/copiny.png" srcset="images/our-clients/copiny@2x.png 2x" alt="" />
+          </li>
+          <li class="our-clients__item">
+            <img src="images/our-clients/gazprom.png" srcset="images/our-clients/gazprom@2x.png 2x" alt="" />
+          </li>
+          <li class="our-clients__item">
+            <img src="images/our-clients/bisco.png" srcset="images/our-clients/bisco@2x.png 2x" alt="" />
+          </li>
+          <li class="our-clients__item">
+            <img src="images/our-clients/next-development.png" srcset="images/our-clients/next-development@2x.png 2x" alt="" />
+          </li>
+          <li class="our-clients__item">
+            <img src="images/our-clients/miloserdie.png" srcset="images/our-clients/miloserdie@2x.png 2x" alt="" />
+          </li>
+          <li class="our-clients__item">
+            <img src="images/our-clients/luchyy.png" srcset="images/our-clients/luchyy@2x.png 2x" alt="" />
+          </li>
+          <li class="our-clients__item">
+            <img src="images/our-clients/vip-liner.png" srcset="images/our-clients/vip-liner@2x.png 2x" alt="" />
+          </li>
+          <li class="our-clients__item">
+            <img src="images/our-clients/bryansk-ecology.png" srcset="images/our-clients/bryansk-ecology@2x.png 2x" alt="" />
+          </li>
+          <li class="our-clients__item">
+            <img src="images/our-clients/philatelist.png" srcset="images/our-clients/philatelist@2x.png 2x" alt="" />
+          </li>
+          <li class="our-clients__item">
+            <img src="images/our-clients/aquatoria.png" srcset="images/our-clients/aquatoria@2x.png 2x" alt="" />
+          </li>
+        </ul>
       </div>
     </section>
     @@include('blocks/site-footer.html')

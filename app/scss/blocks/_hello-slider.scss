@@ -1,11 +1,11 @@
 .hello-slider {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   font-size: 20px;
   line-height: 30px;
 
   .swiper-pagination {
-    bottom: 100px;
+    bottom: 70px;
   }
 
   .swiper-pagination-bullet {
@@ -20,7 +20,7 @@
   }
 
   .swiper-pagination-bullet-active {
-    color: $base-color;
+    color: $white-color;
   }
 }
 
@@ -37,14 +37,14 @@
   display: flex;
   flex-grow: 1;
   align-items :center;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .hello-slide__row {
   display: flex;
   align-items: flex-start;
   flex-grow: 1;
-  margin-top: 30vh;
+  margin-top: 25vh;
 }
 
 .hello-slide__title {
@@ -63,6 +63,6 @@
 
 .hello-slide__link {
   position: absolute;
-  bottom: 100px;
+  bottom: 70px;
   text-align: right;
 }

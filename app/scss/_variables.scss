@@ -1,5 +1,5 @@
 // Colors
-$base-color: #fff;
+$base-color: #000;
 $accent-color: #4cc9ff;
 
 $success-color: #11fd6d;
@@ -10,9 +10,12 @@ $danger-color: #fd0d4d;
 $gray-color-190: #bebebe;
 
 $light-color: #e4e4e4;
+$black-color: #000;
+$white-color: #fff;
 $dark-color: #212324;
-$muted-color: #7a7a7a;
+$muted-color: #8a8a8a;
 $link-color: $accent-color;
+$link-color--hover: mix(#000, $link-color, 10%);
 
 
 // Fonts

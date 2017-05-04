@@ -2,13 +2,16 @@
   <div class="site-header__inner">
     <div class="site-header__logo logo">
       <a class="logo__link" href="index.html">
-        <svg class="logo__image" width="50" height="50" viewBox="0 0 50 50">
-          <path d="M25 49.5A24.5 24.5 0 1 1 49.5 25 24.5 24.5 0 0 1 25 49.5z"/>
-        </svg>
+      <img class="logo__image" src="../images/logo.svg" width="32" height="32" alt="Логотип компании Ideapix">
       </a>
     </div>
     <button class="site-header__nav-toggler nav-toggler" type="button">
-      <span class="nav-toggler__icon" style="font-size: 30px;">&#127828;</span>
+      <svg class="nav-toggler__icon" width="32" height="32">
+        <use xlink:href="images/symbols.svg#menu"></use>
+      </svg>
+      <svg class="nav-toggler__icon nav-toggler__icon--hidden" width="32" height="32">
+        <use xlink:href="images/symbols.svg#menu-closed"></use>
+      </svg>
       меню
     </button>
   </div>

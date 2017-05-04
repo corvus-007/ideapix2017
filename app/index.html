@@ -12,7 +12,7 @@
   <div class="site-wrapper">
     @@include('blocks/site-cover.html')
     @@include('blocks/site-header.html')
-    <!-- Slider main container -->
+
     <div class="hello">
       <div class="hello-overlay">
         <video class="hello-overlay__video" preload="metadata" autoplay loop muted>
@@ -21,7 +21,6 @@
         </video>
       </div>
       <div class="hello-slider swiper-container">
-        <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <div class="hello-slide swiper-slide">
             <div class="hello-slide__inner">
@@ -57,7 +56,6 @@
             </div>
           </div>
         </div>
-        <!-- If we need pagination -->
         <div class="container">
           <div class="hello-slider__pagination swiper-pagination"></div>
         </div>
@@ -191,6 +189,7 @@
         </ul>
       </div>
     </section>
+
     @@include('blocks/site-footer.html')
     @@include('blocks/site-scripts.html')
   </div>

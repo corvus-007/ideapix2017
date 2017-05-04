@@ -11,8 +11,8 @@
   transition: transform 0.4s ease, visibility 0s $duration;
   pointer-events: none;
   box-sizing: border-box;
-  will-change: transform;
-  visibility: hidden, visibility;
+  will-change: transform, visibility;
+  visibility: hidden;
 
   &--opened {
     transform: translateX(0);

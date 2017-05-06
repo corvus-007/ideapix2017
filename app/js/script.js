@@ -84,28 +84,29 @@ document.addEventListener('DOMContentLoaded', function() {
   =            Hello slider            =
   ====================================*/
 
-  var helloSlider = new Swiper('.hello-slider', {
-    speed: 600,
-    // loop: true,
-    effect: 'coverflow',
-    pagination: '.hello-slider__pagination',
-    paginationClickable: true,
-    slidesPerView: 'auto',
-    coverflow: {
-      rotate: 60,
-      stretch: 0,
-      depth: 100,
-      modifier: 2,
-      slideShadows: false
+  var helloSlider = document.querySelector('.helloSlider');
+
+  if (helloSlider) {
+    var helloSliderSwiper = new Swiper(helloSlider, {
+      speed: 600,
+      // loop: true,
+      effect: 'coverflow',
+      pagination: '.hello-slider__pagination',
+      paginationClickable: true,
+      slidesPerView: 'auto',
+      coverflow: {
+        rotate: 60,
+        stretch: 0,
+        depth: 100,
+        modifier: 2,
+        slideShadows: false
+      }
+    });
+
+    if (!window.matchMedia("(min-width: 768px)").matches) {
+      helloSliderSwiper.destroy();
     }
-  });
-
-  if (window.matchMedia("(min-width: 768px)").matches) {
-    helloSlider.update();
-  } else {
-    helloSlider.destroy();
-   }
-
+  }
 
   /*=====  End of Hello slider  ======*/
 
@@ -147,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let rgb = dominantColor.split(",");
     return rgb;
   }
+
   /*========================================
   =            Check work color            =
   ========================================*/
@@ -157,7 +159,6 @@ document.addEventListener('DOMContentLoaded', function() {
     $(workItems).each(function() {
       var $self = $(this);
       var $workImage = $(this).find('.work__image');
-      console.log($self);
       // console.log(getDominantColor(this));
       // $workImage.on('load', function() {
         console.log(this);

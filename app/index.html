@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Главная – ideapix2017</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="homepage">
@@ -14,11 +13,36 @@
     @@include('blocks/site-header.html')
 
     <div class="hello">
-      <div class="hello-overlay">
-        <video class="hello-overlay__video" preload="metadata" autoplay loop muted>
-          <source src="Very-Open-Space.webm" type="video/webm">
-          <source src="Very-Open-Space.mp4" type="video/mp4">
-        </video>
+    <div class="hello-reviews">
+        <div class="hello-reviews__list">
+          <div class="hello-reviews__item hello-reviews__item--active">
+            <div class="hello-reviews__headline">
+              <span class="hello-reviews__reload">Следующая цитата</span>
+              <b class="hello-reviews__name">Центр обучения кадров ДОАО «Центрэнергогаз»</b>
+            </div>
+            <blockquote class="hello-reviews__message">
+              <p>Все поставленные нами задачи были выполнены профессионально</p>
+            </blockquote>
+          </div>
+          <div class="hello-reviews__item">
+            <div class="hello-reviews__headline">
+              <span class="hello-reviews__reload">Следующая цитата</span>
+              <b class="hello-reviews__name">Inchcape</b>
+            </div>
+            <blockquote class="hello-reviews__message">
+              <p>Ожидаемый результат и&nbsp;получаемый &mdash;&nbsp;100&nbsp;из&nbsp;100</p>
+            </blockquote>
+          </div>
+          <div class="hello-reviews__item">
+            <div class="hello-reviews__headline">
+              <span class="hello-reviews__reload">Следующая цитата</span>
+              <b class="hello-reviews__name">SCJohnson</b>
+            </div>
+            <blockquote class="hello-reviews__message">
+              <p>Промо делает как надо!</p>
+            </blockquote>
+          </div>
+        </div>
       </div>
       <div class="hello-slider swiper-container">
         <div class="swiper-wrapper">
@@ -60,36 +84,11 @@
           <div class="hello-slider__pagination swiper-pagination"></div>
         </div>
       </div>
-      <div class="hello-reviews">
-        <div class="hello-reviews__list">
-          <div class="hello-reviews__item hello-reviews__item--active">
-            <div class="hello-reviews__headline">
-              <span class="hello-reviews__reload">Следующая цитата</span>
-              <b class="hello-reviews__name">Центр обучения кадров ДОАО «Центрэнергогаз»</b>
-            </div>
-            <blockquote class="hello-reviews__message">
-              <p>Все поставленные нами задачи были выполнены профессионально</p>
-            </blockquote>
-          </div>
-          <div class="hello-reviews__item">
-            <div class="hello-reviews__headline">
-              <span class="hello-reviews__reload">Следующая цитата</span>
-              <b class="hello-reviews__name">Inchcape</b>
-            </div>
-            <blockquote class="hello-reviews__message">
-              <p>Ожидаемый результат и&nbsp;получаемый &mdash;&nbsp;100&nbsp;из&nbsp;100</p>
-            </blockquote>
-          </div>
-          <div class="hello-reviews__item">
-            <div class="hello-reviews__headline">
-              <span class="hello-reviews__reload">Следующая цитата</span>
-              <b class="hello-reviews__name">SCJohnson</b>
-            </div>
-            <blockquote class="hello-reviews__message">
-              <p>Промо делает как надо!</p>
-            </blockquote>
-          </div>
-        </div>
+      <div class="hello-overlay">
+        <video class="hello-overlay__video" preload="metadata" autoplay loop muted>
+          <source src="Very-Open-Space.webm" type="video/webm">
+          <source src="Very-Open-Space.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
 

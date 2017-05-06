@@ -4,7 +4,8 @@
   padding: 3rem 2rem;
   max-width: 400px;
   width: auto;
-  border-top: 5px solid $accent-color;
+  // border-top: 5px solid $accent-color;
+  color: $dark-color;
   background: #fff;
 }
 
@@ -16,6 +17,7 @@
   letter-spacing: 0.04em;
   font-weight: 700;
   font-size: 1.65rem;
+  font-family: $secondary-font;
 }
 
 

@@ -10,11 +10,19 @@ body {
   line-height: normal;
   color: $dark-color;
   background-color: $white-color;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 .homepage {
   background: $dark-color;
   color: $white-color;
+}
+
+.no-scroll {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
 }
 
 .container {
@@ -42,6 +50,7 @@ h4 {
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   line-height: 1.2;
+  font-weight: normal;
 }
 
 h1,
@@ -51,7 +60,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: rem(27);
+  font-size: rem(28);
 }
 
 h3,

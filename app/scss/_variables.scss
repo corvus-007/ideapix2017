@@ -1,6 +1,7 @@
 // Colors
 $base-color: #000;
 $accent-color: #4cc9ff;
+$accent-color: #0588d9;
 
 $success-color: #11fd6d;
 $info-color: #b9dfff;
@@ -45,12 +46,14 @@ $grid-breakpoints: (
   sm: 568px,
   md: 768px,
   lg: 992px,
-  xl: 1200px
+  xl: 1280px,
+  xxl: 1440px
 );
 
 $grid-max-widths: (
   sm: none,
-  md: 720px,
+  md: none,
   lg: 960px,
-  xl: 1080px
+  xl: 1000px,
+  xxl: 1180px
 );

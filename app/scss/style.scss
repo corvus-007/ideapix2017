@@ -11,7 +11,7 @@
 @import "global/layout";
 
 // Vendors
-@import "vendors/slick";
+@import "vendors/swiper.min";
 @import "vendors/magnific-popup";
 
 // Blocks
@@ -35,8 +35,11 @@
 @import "blocks/hello-reviews";
 @import "blocks/entry-case";
 @import "blocks/our-clients";
-@import "blocks/project";
 @import "blocks/page";
+@import "blocks/post";
+@import "blocks/works";
+@import "blocks/work";
+@import "blocks/project";
 @import "blocks/address";
 @import "blocks/application";
 // @import "blocks/archive-events";

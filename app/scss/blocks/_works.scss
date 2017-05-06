@@ -1,0 +1,25 @@
+.works {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.works__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.works__item {
+  display: block;
+
+  @include media-breakpoint-up(sm) {
+    width: 50%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: percentage(1 / 3);
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 25%;
+  }
+}

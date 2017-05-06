@@ -6,6 +6,10 @@
   left: 0;
   right: 0;
   overflow: hidden;
+  background-image: url("images/bg-without-video.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repaet;
 
   &::before {
     content: "";
@@ -20,7 +24,12 @@
 }
 
 .hello-overlay__video {
+  display: none;
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
 }

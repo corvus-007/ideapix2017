@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var navTogglerIconItems = navToggler.querySelectorAll('.nav-toggler__icon');
 
   function toggleSiteCover() {
+    document.body.classList.toggle('no-scroll');
     siteCover.classList.toggle('site-cover--opened');
     Array.prototype.forEach.call(navTogglerIconItems, function(item) {
       item.classList.toggle('nav-toggler__icon--hidden');
@@ -52,8 +53,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-
   /*=====  End of Hello reviews  ======*/
+
+
+
+  /*====================================
+  =            Inline popup            =
+  ====================================*/
+
+  $('.js-trigger-inline-popup').magnificPopup({
+    mainClass: 'popup-fade',
+    removalDelay: 300
+  });
+
+  /*=====  End of Inline popup  ======*/
+
+
+
+  /*==================================
+  =            Input mask            =
+  ==================================*/
+
+  $('input[type="tel"]').mask("+7 (999) 999-99-99", {});
+
+  /*=====  End of Input mask  ======*/
 
 
 
@@ -75,9 +98,76 @@ document.addEventListener('DOMContentLoaded', function() {
       modifier: 2,
       slideShadows: false
     }
-  })
+  });
+
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    helloSlider.update();
+  } else {
+    helloSlider.destroy();
+   }
+
 
   /*=====  End of Hello slider  ======*/
 
+
+  function getDominantColor(aImg) {
+    let canvas = document.createElement("canvas");
+    canvas.height = aImg.height;
+    canvas.width = aImg.width;
+
+    let context = canvas.getContext("2d");
+    context.drawImage(aImg, 0, 0);
+
+    // keep track of how many times a color appears in the image
+    let colorCount = {};
+    let maxCount = 0;
+    let dominantColor = "";
+
+    // data is an array of a series of 4 one-byte values representing the rgba values of each pixel
+    let data = context.getImageData(0, 0, aImg.height, aImg.width).data;
+
+    for (let i = 0; i < data.length; i += 4) {
+      // ignore transparent pixels
+      if (data[i + 3] == 0) continue;
+
+      let color = data[i] + "," + data[i + 1] + "," + data[i + 2];
+      // ignore white
+      if (color == "255,255,255" || color == "0,0,0") continue;
+      // if () continue;
+
+      colorCount[color] = colorCount[color] ? colorCount[color] + 1 : 1;
+
+      // keep track of the color that appears the most times
+      if (colorCount[color] > maxCount) {
+        maxCount = colorCount[color];
+        dominantColor = color;
+      }
+    }
+
+    let rgb = dominantColor.split(",");
+    return rgb;
+  }
+  /*========================================
+  =            Check work color            =
+  ========================================*/
+
+  var workItems = document.querySelectorAll('.work');
+
+  $(window).on('load', function() {
+    $(workItems).each(function() {
+      var $self = $(this);
+      var $workImage = $(this).find('.work__image');
+      console.log($self);
+      // console.log(getDominantColor(this));
+      // $workImage.on('load', function() {
+        console.log(this);
+        $self.find('.work__overlay').css('background-color', 'rgba(' + getDominantColor($workImage[0]) + ', 1)');
+      // });
+    });
+
+  });
+
+
+  /*=====  End of Check work color  ======*/
 
 });

@@ -8,11 +8,6 @@
     background-color: $light-color;
     color: $dark-color;
   }
-
-  &--greenwood {
-    background-position: top center;
-    // background-image: url("https://images.unsplash.com/photo-1431382057470-39a4404b6feb?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=");
-  }
 }
 
 .entry-case__inner {
@@ -49,6 +44,22 @@
   }
 }
 
+.entry-case--light .entry-case__title {
+  color: $white-color;
+}
+
 .entry-case--dark .entry-case__title {
   color: $dark-color;
+}
+
+.entry-case__link {
+  @include createButton();
+}
+
+.entry-case--light .entry-case__link {
+  @include createButtonColors()
+}
+
+.entry-case--dark .entry-case__link {
+  @include createButtonColorsDark();
 }

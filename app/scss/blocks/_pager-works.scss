@@ -1,26 +1,25 @@
-.work {
+.pager-works {
+  display: flex;
+}
+
+.pager-works__item {
   position: relative;
+  width: 50%;
 }
 
-.work__inner {
-
-}
-
-.work__image-wrapper {
-  @include fitObject();
-}
-
-.work--short {
-  .work__image-wrapper {
-    padding-top: 110px;
-  }
-}
-
-.work__image {
+.pager-works__inner {
 
 }
 
-.work__overlay {
+.pager-works__image-wrapper {
+  @include fitObject(2 / 1);
+}
+
+.pager-works__image {
+
+}
+
+.pager-works__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -36,20 +35,20 @@
   transition: opacity ($duration * 3) ease;
 }
 
-.work:hover .work__overlay,
-.work:focus .work__overlay {
+.pager-works__item:hover .pager-works__overlay,
+.pager-works__item:focus .pager-works__overlay {
   opacity: 1;
 }
 
-.work__overlay.light {
+.pager-works__overlay.light {
   color: $dark-color;
 }
 
-.work__overlay.dark {
+.pager-works__overlay.dark {
   color: $white-color;
 }
 
-.work__type {
+.pager-works__type {
   line-height: 1;
   padding: 3px 15px;
   border-radius: 50px;
@@ -60,7 +59,7 @@
   color: $white-color;
 }
 
-.work__title {
+.pager-works__title {
   margin-top: 35px;
   margin-bottom: 35px;
   line-height: 1.5;
@@ -74,17 +73,17 @@
   }
 }
 
-.work__link {
+.pager-works__link {
   @include createButton();
 
   padding: 12px 35px;
   font-size: 16px;
 }
 
-.work__overlay.light .work__link {
+.pager-works__overlay.light .pager-works__link {
   @include createButtonColorsDark();
 }
 
-.work__overlay.dark .work__link {
+.pager-works__overlay.dark .pager-works__link {
   @include createButtonColors();
 }

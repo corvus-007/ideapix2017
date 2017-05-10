@@ -1,4 +1,5 @@
 .works {
+
 }
 
 .works__list {
@@ -8,7 +9,6 @@
 
 .works__item {
   width: 100%;
-  // display: block;
 
   @include media-breakpoint-up(sm) {
     width: 50%;
@@ -16,19 +16,9 @@
 
   @include media-breakpoint-up(lg) {
     width: percentage(1 / 3);
-
-    &--short {
-      width: 50%;
-    }
   }
 
   @include media-breakpoint-up(xl) {
     width: 25%;
-
-    &--short {
-      width: 50%;
-    }
   }
-
-
 }

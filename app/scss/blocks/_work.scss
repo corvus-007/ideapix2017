@@ -33,7 +33,7 @@
   padding: $grid-gutter-width;
   text-align: center;
   opacity: 0;
-  transition: opacity $duration ease;
+  transition: opacity ($duration * 3) ease;
 }
 
 .work:hover .work__overlay,

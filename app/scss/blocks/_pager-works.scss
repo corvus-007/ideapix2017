@@ -1,10 +1,19 @@
 .pager-works {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .pager-works__item {
   position: relative;
-  width: 50%;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: 50%;
+
+    &:only-child {
+      width: 100%;
+    }
+  }
 }
 
 .pager-works__inner {
@@ -13,6 +22,30 @@
 
 .pager-works__image-wrapper {
   @include fitObject(2 / 1);
+
+  @include media-breakpoint-up(xl) {
+    padding-top: percentage(1 / 2.5);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    padding-top: percentage(1 / 3);
+  }
+}
+
+.pager-works__item:only-child .pager-works__image-wrapper {
+  @include fitObject(2 / 1);
+
+  @include media-breakpoint-up(sm) {
+    padding-top: percentage(1 / 3);
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-top: percentage(1 / 5);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    padding-top: percentage(1 / 6);
+  }
 }
 
 .pager-works__image {
@@ -48,42 +81,47 @@
   color: $white-color;
 }
 
-.pager-works__type {
-  line-height: 1;
-  padding: 3px 15px;
-  border-radius: 50px;
-  color: $dark-color;
-  text-transform: lowercase;
-  font-size: 16px;
-  background-color: $accent-color;
-  color: $white-color;
-}
-
 .pager-works__title {
   margin-top: 35px;
   margin-bottom: 35px;
   line-height: 1.5;
-  font-size: 22px;
+  font-size: 20px;
   color: $dark-color;
 
   span {
+    padding: 2px 8px;
     box-decoration-break: clone;
-    padding: 4px 10px;
     background-color: #fff;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 22px;
+
+    span {
+      padding: 4px 10px;
+    }
   }
 }
 
 .pager-works__link {
   @include createButton();
 
-  padding: 12px 35px;
-  font-size: 16px;
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+    padding: 12px 35px;
+    font-size: 16px;
+  }
 }
 
-.pager-works__overlay.light .pager-works__link {
-  @include createButtonColorsDark();
+@include media-breakpoint-up(md) {
+  .pager-works__overlay.light .pager-works__link {
+    @include createButtonColorsDark();
+  }
+
+  .pager-works__overlay.dark .pager-works__link {
+    @include createButtonColors();
+  }
 }
 
-.pager-works__overlay.dark .pager-works__link {
-  @include createButtonColors();
-}

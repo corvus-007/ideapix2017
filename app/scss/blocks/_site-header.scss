@@ -25,6 +25,7 @@
 .site-header__phone {
   margin-left: auto;
   margin-right: $grid-gutter-width;
+  color: $white-color;
 
   @include media-breakpoint-up(md) {
     display: none;

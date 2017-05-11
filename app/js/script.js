@@ -112,6 +112,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+/*=====================================
+=            Project ready            =
+=====================================*/
+
+var project = document.querySelector('.project');
+
+if (project) {
+  window.addEventListener('load', function() {
+    project.classList.add('project--ready');
+  });
+}
+
+/*=====  End of Project ready  ======*/
+
+
+
   /*========================================
   =            Check work color            =
   ========================================*/
@@ -121,13 +137,17 @@ document.addEventListener('DOMContentLoaded', function() {
   var colorThief = new ColorThief();
   var $parentWork = null;
 
-  $('.js-check-color-image').each(function() {
-    $parentWork = $(this).closest('.js-check-color-parent');
-    $parentWork
-      .find('.js-check-color-overlay')
-        .css('background-color', 'rgb('+colorThief.getColor(this).join(', ')+')')
+  $(window).on('load', function() {
+    $('.js-check-color-image').each(function(index, image) {
+      $parentWork = $(this).closest('.js-check-color-parent');
+      $parentWork
+        .find('.js-check-color-overlay')
+        .css('background-color', 'rgb(' + colorThief.getColor(this).join(', ') + ')')
         .colourBrightness();
+    });
   });
+
+
 
   /*=====  End of Check work color  ======*/
 

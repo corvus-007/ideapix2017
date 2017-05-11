@@ -1,5 +1,6 @@
 html {
   font-size: $font-size;
+  background-color: $white-color;
 }
 
 body {
@@ -15,8 +16,8 @@ body {
 }
 
 .homepage {
-  background: $dark-color;
   color: $white-color;
+  background-color: $dark-color;
 }
 
 .no-scroll {

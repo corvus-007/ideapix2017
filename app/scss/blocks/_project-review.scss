@@ -1,0 +1,48 @@
+.project-review {
+  padding-top: ($grid-gutter-width * 2);
+  padding-bottom: ($grid-gutter-width * 2);
+  color: $base-color;
+  background-color: #fff;
+  text-align: center;
+}
+
+.project-review__head {
+  margin-bottom: 35px;
+}
+
+.project-review__photo {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  margin-bottom: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.project-review__caption {
+  display: block;
+  font-size: 34px;
+  margin-bottom: 5px;
+}
+
+.project-review__subcaption {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.project-review__message {
+  margin: 0;
+  margin-bottom: 1em;
+  font-size: 20px;
+  line-height: 1.5;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.project-review__button {
+  @include createButton();
+  @include createButtonColorsRed();
+}

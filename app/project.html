@@ -39,41 +39,99 @@
         <div class="project__item">
           <img class="project__item-image" src="https://images.unsplash.com/photo-1451195090173-2e0781d7c33e?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=" alt="">
         </div>
+        <div class="project__footer">
+          <section class="project-stats container">
+            <ul class="project-stats__list">
+              <li class="project-stats__item">
+                <b class="project-stats__item-value">20</b>
+                <div class="project-stats__item-caption">Прототипов</div>
+              </li>
+              <li class="project-stats__item">
+                <b class="project-stats__item-value">18</b>
+                <div class="project-stats__item-caption">Макетов</div>
+              </li>
+              <li class="project-stats__item">
+                <b class="project-stats__item-value">25</b>
+                <div class="project-stats__item-caption">Бессонных ночей</div>
+              </li>
+              <li class="project-stats__item">
+                <b class="project-stats__item-value">280</b>
+                <div class="project-stats__item-caption">Человекочасов</div>
+              </li>
+            </ul>
+          </section>
+          <!-- <section class="project-socials container">
+            <h2 class="project-socials__title">Поделиться</h2>
+            <div class="project-socials__list">
+              <a class="project-socials__item" href="#">
+                <svg class="project-socials__icon" width="40" height="40">
+                  <use xlink:href="images/symbols.svg#soc-vk-project"></use>
+                </svg>
+              </a>
+              <a class="project-socials__item" href="#">
+                <svg class="project-socials__icon" width="40" height="40">
+                  <use xlink:href="images/symbols.svg#soc-telegram-project"></use>
+                </svg>
+              </a>
+              <a class="project-socials__item" href="#">
+                <svg class="project-socials__icon" width="40" height="40">
+                  <use xlink:href="images/symbols.svg#soc-instagram-project"></use>
+                </svg>
+              </a>
+            </div>
+          </section> -->
+          <section class="project-review">
+            <div class="container">
+              <div class="project-review__head">
+                <div class="project-review__photo">
+                  <img src="//placehold.it/300x300/56f/fff" alt="">
+                </div>
+                <span class="project-review__caption">Имя Фамилия</span>
+                <span class="project-review__subcaption">Дожность</span>
+              </div>
+              <blockquote class="project-review__message">
+                <p>Долго выбирали веб-студию для обновления сайта Коммерсантъ UK и в результате обратились в Coalla Agency. Доверили свой проект этой команде, остались очень довольны — поставленные задачи выполнялись профессионально, быстро и качественно, что в современных российских условиях большая редкость.</p>
+              </blockquote>
+              <span class="project-review__button">
+                <svg class="button__icon" width="11" height="20">
+                  <use xlink:href="images/symbols.svg#chevron-right"></use>
+                </svg>
+                <span>Скачать</span>
+              </span>
+            </div>
+          </section>
+        </div>
       </div>
-      <div class="pager-works">
-        <a class="pager-works__item js-check-color-parent" href="project.html">
-          <div class="pager-works__image-wrapper">
-            <img class="pager-works__image js-check-color-image" src="images/works/01.jpg" alt="">
-          </div>
-          <div class="pager-works__overlay js-check-color-overlay">
-            <h2 class="pager-works__title">
-              <span>Крупнейший научно-технический музей мира</span>
-            </h2>
-            <span class="pager-works__link button">
-              <span>Смотреть проект</span>
-              <svg class="button__icon" width="11" height="20">
-                <use xlink:href="images/symbols.svg#chevron-right"></use>
-              </svg>
-            </span>
-          </div>
-        </a>
-        <a class="pager-works__item js-check-color-parent" href="project.html">
-          <div class="pager-works__image-wrapper">
-            <img class="pager-works__image js-check-color-image" src="images/works/04.jpg" alt="">
-          </div>
-          <div class="pager-works__overlay js-check-color-overlay">
-            <h2 class="pager-works__title">
-              <span>Крупнейший научно-технический музей мира</span>
-            </h2>
-            <span class="pager-works__link">
-              <span>Смотреть проект</span>
-              <svg class="button__icon" width="11" height="20">
-                <use xlink:href="images/symbols.svg#chevron-right"></use>
-              </svg>
-            </span>
-          </div>
+      <div class="application">
+        <a class="application__link js-trigger-inline-popup" href="#popup-callback">
+          <span class="application__link-text">Оставить заявку</span>
         </a>
       </div>
+      <section class="pager-works">
+        <h2 class="pager-works__caption">Другие работы</h2>
+        <div class="pager-works__list">
+          <a class="pager-works__item js-check-color-parent" href="project.html">
+            <div class="pager-works__image-wrapper">
+              <img class="pager-works__image js-check-color-image" src="images/works/01.jpg" alt="">
+            </div>
+            <div class="pager-works__overlay js-check-color-overlay">
+              <h2 class="pager-works__title">
+                Крупнейший научно-технический музей мира
+              </h2>
+            </div>
+          </a>
+          <a class="pager-works__item js-check-color-parent" href="project.html">
+            <div class="pager-works__image-wrapper">
+              <img class="pager-works__image js-check-color-image" src="images/works/04.jpg" alt="">
+            </div>
+            <div class="pager-works__overlay js-check-color-overlay">
+              <h2 class="pager-works__title">
+                Крупнейший научно-технический музей мира
+              </h2>
+            </div>
+          </a>
+        </div>
+      </section>
     </main>
 
     @@include('blocks/site-footer.html')

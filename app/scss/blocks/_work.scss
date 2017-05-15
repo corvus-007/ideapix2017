@@ -65,13 +65,14 @@
   margin-bottom: 35px;
   line-height: 1.5;
   font-size: 22px;
-  color: $dark-color;
+}
 
-  span {
-    box-decoration-break: clone;
-    padding: 4px 10px;
-    background-color: #fff;
-  }
+.work__overlay.light .work__title {
+  color: $dark-color;
+}
+
+.work__overlay.dark .work__title {
+  color: $white-color;
 }
 
 .work__link {

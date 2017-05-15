@@ -1,5 +1,19 @@
-document.addEventListener('DOMContentLoaded', function() {
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  function elloSliderActive(swiper) {
+    var activeSlide = swiper.snapIndex;
+
+    $(helloSlider)
+      .find('.hello-slide')
+      .removeClass('hello-slide--active')
+      .eq(activeSlide)
+      .addClass('hello-slide--active');
+  }
   /*==================================
   =            Toggle nav            =
   ==================================*/
@@ -36,6 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
   if (helloReviews) {
     var helloReviewsItems = helloReviews.querySelectorAll('.hello-reviews__item');
     var helloReviewsItemsCount = (helloReviewsItems.length - 1);
+    var helloReviewIndex = Math.floor(Math.random() * helloReviewsItems.length);
+    helloReviewsItems[helloReviewIndex].classList.add('hello-reviews__item--active');
 
     $(helloReviews).on('click', '.hello-reviews__reload', function() {
       var $self = $(this);
@@ -87,6 +103,16 @@ document.addEventListener('DOMContentLoaded', function() {
   var helloSlider = document.querySelector('.hello-slider');
 
   if (helloSlider) {
+    var helloSlideTitleItems = document.querySelectorAll('.hello-slide__title');
+    Array.prototype.forEach.call(helloSlideTitleItems, function(helloSlideTitle) {
+      helloSlideTitle.innerHTML = helloSlideTitle.innerText.replace(/./g, '<span>$&</span>');
+      var helloTitleLetters = helloSlideTitle.querySelectorAll('span');
+
+      Array.prototype.forEach.call(helloTitleLetters, function(letter) {
+        letter.style.setProperty('--delay', getRandomArbitrary(0, 1) + 's');
+      });
+    });
+
     var helloSliderSwiper = new Swiper(helloSlider, {
       speed: 600,
       // loop: true,
@@ -100,6 +126,12 @@ document.addEventListener('DOMContentLoaded', function() {
         depth: 100,
         modifier: 2,
         slideShadows: false
+      },
+      onInit: function(swiper) {
+        elloSliderActive(swiper);
+      },
+      onTransitionEnd: function(swiper) {
+        elloSliderActive(swiper);
       }
     });
 

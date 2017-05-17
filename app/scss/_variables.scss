@@ -3,9 +3,9 @@ $base-color: #000;
 $accent-color: #4cc9ff;
 $accent-color: #0588d9;
 
-$success-color: #11fd6d;
+$success-color: #20ed8f;
 $info-color: #b9dfff;
-$warning-color: #edf512;
+$warning-color: #FFF176;
 $danger-color: #fd0d4d;
 
 $gray-color-190: #bebebe;
@@ -18,10 +18,11 @@ $muted-color: #8a8a8a;
 $link-color: $accent-color;
 $link-color--hover: mix(#000, $link-color, 10%);
 
-// Socials color
-$color-vk: #537599;
-$color-telegram: #139bd0;
-$color-instagram: #2a5b83;
+// mark color
+$mark-yellow: $warning-color;
+$mark-green: $success-color;
+$mark-blue: $accent-color;
+
 
 
 // Fonts

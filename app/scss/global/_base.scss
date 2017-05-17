@@ -1,6 +1,8 @@
 html {
   font-size: $font-size;
   background-color: $white-color;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 body {
@@ -13,6 +15,27 @@ body {
   background-color: $white-color;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.is-loaded {
+
+  &::before {
+    pointer-events: none;
+    transform: translateY(-100%);
+  }
+
+  &::after {
+    pointer-events: none;
+    transform: translateY(100%);
+  }
+}
+
+.is-loaded .loader {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0s 0.2s;
 }
 
 .homepage {
@@ -41,6 +64,34 @@ a {
 
   &:hover {
     color: $link-color--hover;
+  }
+}
+
+mark {
+  padding: 2px 5px;
+  box-decoration-break: clone;
+
+  a {
+    color: currentColor;
+  }
+
+  &.yellow {
+    background-color: $mark-yellow;
+    color: $dark-color;
+  }
+
+  &.green {
+    background-color: $mark-green;
+    color: $dark-color;
+  }
+
+  &.blue {
+    background-color: $mark-blue;
+    color: $white-color;
+
+    a {
+      color: $white-color;
+    }
   }
 }
 

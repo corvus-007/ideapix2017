@@ -5,6 +5,7 @@ ul:not([class]) {
   @include clear-list();
 
   margin: 0;
+  margin-bottom: 0.3em;
   padding: 0;
   letter-spacing: normal;
 

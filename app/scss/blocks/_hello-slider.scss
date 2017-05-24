@@ -106,10 +106,6 @@
     opacity: 0;
     transition: ($duration * 1) var(--delay);
     will-change: opacity, top;
-
-    &:empty {
-      width: 10px;
-    }
   }
 
   .hello-slide--active .hello-slide__title span {

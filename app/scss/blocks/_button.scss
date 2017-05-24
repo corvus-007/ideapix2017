@@ -70,6 +70,10 @@
   &--dark {
     @include createButtonColorsDark();
   }
+
+  &--red {
+    @include createButtonColorsRed();
+  }
 }
 
 .button__icon {

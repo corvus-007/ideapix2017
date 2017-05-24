@@ -161,21 +161,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-/*=====================================
-=            Project ready            =
-=====================================*/
+  /*=====================================
+  =            Project ready            =
+  =====================================*/
 
-var project = document.querySelector('.project');
+  var project = document.querySelector('.project');
 
-if (project) {
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      project.classList.add('project--ready');
-    }, 500);
-  });
-}
+  if (project) {
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        project.classList.add('project--ready');
+      }, 500);
+    });
+  }
 
-/*=====  End of Project ready  ======*/
+  /*=====  End of Project ready  ======*/
 
 
 
@@ -199,5 +199,74 @@ if (project) {
   });
 
   /*=====  End of Check work color  ======*/
+
+
+  /*===================================
+  =            Popup cards            =
+  ===================================*/
+
+  var card = document.querySelector(".card");
+  var cardWrapper = document.querySelector(".js-card-wrapper");
+  var visibleCardWrapper = false;
+  var gapBounding = 20;
+  var pageWidth = 0;
+  var pageHeight = 0;
+
+  $(".cards").on("mouseenter", ".card", function(event) {
+    visibleCardWrapper = true;
+    toggleVisibilityCardWrapper();
+    cardWrapper.appendChild(this.firstElementChild.cloneNode(true));
+
+    pageWidth = document.documentElement.clientWidth;
+    pageHeight = document.documentElement.clientHeight;
+    var cardMetriks = this.getBoundingClientRect();
+    var popupWidth = 400;
+    var poppuHeight = cardWrapper.offsetHeight;
+    var cardWidth = this.offsetWidth;
+    var cardHeight = this.offsetHeight;
+    var cardLeft = cardMetriks.left + pageXOffset;
+    var popupLeft = cardLeft - (popupWidth - cardWidth) / 2;
+
+    console.log(poppuHeight)
+
+    if (popupLeft < gapBounding) {
+      var left = gapBounding + pageXOffset;
+    } else if ((popupLeft + popupWidth) > (pageWidth - gapBounding)) {
+      left = (popupLeft - (popupLeft + popupWidth - (pageWidth - gapBounding)))
+    } else {
+      left = popupLeft;
+    }
+
+    if (cardMetriks.top < gapBounding) {
+      var top = gapBounding + pageYOffset;
+    } else if (cardMetriks.bottom > (pageHeight - gapBounding)) {
+      top = (cardMetriks.top + pageYOffset) - (cardMetriks.bottom - pageHeight + gapBounding + this.offsetWidth * 0.05)
+    } else {
+      top = cardMetriks.top + pageYOffset;
+    }
+
+    cardWrapper.style.cssText = "top: " + top + "px;\
+                              left: " + left + "px;";
+    // width: " + (this.offsetWidth + 60) + "px;";
+    // height: " + (this.offsetHeight + 60) + "px";
+  });
+
+  $(cardWrapper).on("mouseleave", function(event) {
+    visibleCardWrapper = false;
+    toggleVisibilityCardWrapper();
+  });
+
+  function toggleVisibilityCardWrapper() {
+    if (visibleCardWrapper) {
+      cardWrapper.classList.add("popup-card--visible");
+    } else {
+      cardWrapper.classList.remove("popup-card--visible");
+
+      cardWrapper.innerHTML = '';
+      cardWrapper.style.cssText = '';
+    }
+  }
+
+  /*=====  End of Popup cards  ======*/
 
 });

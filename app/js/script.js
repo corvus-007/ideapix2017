@@ -220,35 +220,35 @@ document.addEventListener('DOMContentLoaded', function() {
     pageWidth = document.documentElement.clientWidth;
     pageHeight = document.documentElement.clientHeight;
     var cardMetriks = this.getBoundingClientRect();
-    var popupWidth = 400;
-    var poppuHeight = cardWrapper.offsetHeight;
+    var popupWidth = cardWrapper.offsetWidth;
+    var popupHeight = cardWrapper.offsetHeight;
     var cardWidth = this.offsetWidth;
     var cardHeight = this.offsetHeight;
     var cardLeft = cardMetriks.left + pageXOffset;
     var popupLeft = cardLeft - (popupWidth - cardWidth) / 2;
+    var cardTop = cardMetriks.top + pageYOffset;
+    var popupTop = cardTop - (popupHeight - cardHeight) / 2;
 
-    console.log(poppuHeight)
+    console.log(popupWidth, popupHeight);
 
-    if (popupLeft < gapBounding) {
+    if (popupLeft < gapBounding + pageXOffset) {
       var left = gapBounding + pageXOffset;
-    } else if ((popupLeft + popupWidth) > (pageWidth - gapBounding)) {
-      left = (popupLeft - (popupLeft + popupWidth - (pageWidth - gapBounding)))
+    } else if ((popupLeft + popupWidth) > (pageWidth - gapBounding + pageXOffset)) {
+      left = (popupLeft - (popupLeft + popupWidth - (pageWidth - gapBounding + pageXOffset)))
     } else {
       left = popupLeft;
     }
 
-    if (cardMetriks.top < gapBounding) {
+    if (popupTop < gapBounding + pageYOffset) {
       var top = gapBounding + pageYOffset;
-    } else if (cardMetriks.bottom > (pageHeight - gapBounding)) {
-      top = (cardMetriks.top + pageYOffset) - (cardMetriks.bottom - pageHeight + gapBounding + this.offsetWidth * 0.05)
+    } else if ((popupTop + popupHeight) > (pageHeight - gapBounding + pageYOffset)) {
+      top = (popupTop - (popupTop + popupHeight - (pageHeight - gapBounding + pageYOffset)))
     } else {
-      top = cardMetriks.top + pageYOffset;
+      top = popupTop;
     }
 
     cardWrapper.style.cssText = "top: " + top + "px;\
                               left: " + left + "px;";
-    // width: " + (this.offsetWidth + 60) + "px;";
-    // height: " + (this.offsetHeight + 60) + "px";
   });
 
   $(cardWrapper).on("mouseleave", function(event) {

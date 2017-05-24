@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Главная – ideapix2017</title>
+  @@include('blocks/site-loader-styles.html')
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="homepage">
+  <div class="loader"></div>
   <div class="site-wrapper">
     @@include('blocks/site-cover.html')
     @@include('blocks/site-header.html')
@@ -15,7 +17,7 @@
     <div class="hello">
     <div class="hello-reviews">
         <div class="hello-reviews__list">
-          <div class="hello-reviews__item hello-reviews__item--active">
+          <div class="hello-reviews__item">
             <div class="hello-reviews__headline">
               <span class="hello-reviews__reload">Следующая цитата</span>
               <b class="hello-reviews__name">Центр обучения кадров ДОАО «Центрэнергогаз»</b>

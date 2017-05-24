@@ -29,7 +29,7 @@
   }
 
   &:active {
-    border-color: $dark-color;
+
   }
 }
 
@@ -44,7 +44,22 @@
   }
 
   &:active {
-    border-color: $white-color;
+
+  }
+}
+
+@mixin createButtonColorsRed() {
+  color: $danger-color;
+  border-color: $danger-color;
+
+  &:hover,
+  &:focus {
+    color: $white-color;
+    background-color: $danger-color;
+  }
+
+  &:active {
+
   }
 }
 
@@ -54,6 +69,10 @@
 
   &--dark {
     @include createButtonColorsDark();
+  }
+
+  &--red {
+    @include createButtonColorsRed();
   }
 }
 

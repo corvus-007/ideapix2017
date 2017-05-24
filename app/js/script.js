@@ -1,3 +1,24 @@
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+$(window).one('load', function() {
+  document.body.classList.add('is-loaded');
+  setTimeout(function() {
+    $('.loader').remove();
+  }, 500);
+});
+
+$(document).on('click', 'a[href]:not([href^="#"])', function(event) {
+  event.preventDefault();
+  var self = this;
+  document.body.classList.remove('is-loaded');
+
+  setTimeout(function() {
+    location.href = self.href;
+  }, 270);
+});
+
 document.addEventListener('DOMContentLoaded', function() {
 
   /*==================================
@@ -26,6 +47,64 @@ document.addEventListener('DOMContentLoaded', function() {
   /*=====  End of Toggle nav  ======*/
 
 
+  /*====================================
+  =            Hello slider            =
+  ====================================*/
+
+  function helloSliderActive(swiper) {
+    var activeSlide = swiper.snapIndex;
+
+    $(helloSlider)
+      .find('.hello-slide')
+      .removeClass('hello-slide--active')
+      .eq(activeSlide)
+      .addClass('hello-slide--active');
+
+  }
+  var helloSlider = document.querySelector('.hello-slider');
+
+  if (helloSlider) {
+    var helloSlideTitleItems = document.querySelectorAll('.hello-slide__title');
+    Array.prototype.forEach.call(helloSlideTitleItems, function(helloSlideTitle) {
+      helloSlideTitle.innerHTML = helloSlideTitle.innerText.replace(/./g, '<span>$&</span>');
+      var helloTitleLetters = helloSlideTitle.querySelectorAll('span');
+
+      Array.prototype.forEach.call(helloTitleLetters, function(letter) {
+        letter.style.setProperty('--delay', getRandomArbitrary(0, 1) + 's');
+      });
+    });
+
+    var helloSliderSwiper = new Swiper(helloSlider, {
+      speed: 600,
+      // loop: true,
+      effect: 'coverflow',
+      pagination: '.hello-slider__pagination',
+      paginationClickable: true,
+      slidesPerView: 'auto',
+      coverflow: {
+        rotate: 60,
+        stretch: 0,
+        depth: 100,
+        modifier: 2,
+        slideShadows: false
+      },
+      onInit: function(swiper) {
+        setTimeout(function() {
+          helloSliderActive(swiper);
+        }, 500);
+      },
+      onTransitionEnd: function(swiper) {
+        helloSliderActive(swiper);
+      }
+    });
+
+    if (!window.matchMedia("(min-width: 768px)").matches) {
+      helloSliderSwiper.destroy();
+    }
+  }
+
+  /*=====  End of Hello slider  ======*/
+
 
   /*=====================================
   =            Hello reviews            =
@@ -36,6 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
   if (helloReviews) {
     var helloReviewsItems = helloReviews.querySelectorAll('.hello-reviews__item');
     var helloReviewsItemsCount = (helloReviewsItems.length - 1);
+    var helloReviewIndex = Math.floor(Math.random() * helloReviewsItems.length);
+    helloReviewsItems[helloReviewIndex].classList.add('hello-reviews__item--active');
 
     $(helloReviews).on('click', '.hello-reviews__reload', function() {
       var $self = $(this);
@@ -80,51 +161,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  /*====================================
-  =            Hello slider            =
-  ====================================*/
+  /*=====================================
+  =            Project ready            =
+  =====================================*/
 
-  var helloSlider = document.querySelector('.hello-slider');
+  var project = document.querySelector('.project');
 
-  if (helloSlider) {
-    var helloSliderSwiper = new Swiper(helloSlider, {
-      speed: 600,
-      // loop: true,
-      effect: 'coverflow',
-      pagination: '.hello-slider__pagination',
-      paginationClickable: true,
-      slidesPerView: 'auto',
-      coverflow: {
-        rotate: 60,
-        stretch: 0,
-        depth: 100,
-        modifier: 2,
-        slideShadows: false
-      }
+  if (project) {
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        project.classList.add('project--ready');
+      }, 500);
     });
-
-    if (!window.matchMedia("(min-width: 768px)").matches) {
-      helloSliderSwiper.destroy();
-    }
   }
 
-  /*=====  End of Hello slider  ======*/
-
-
-
-/*=====================================
-=            Project ready            =
-=====================================*/
-
-var project = document.querySelector('.project');
-
-if (project) {
-  window.addEventListener('load', function() {
-    project.classList.add('project--ready');
-  });
-}
-
-/*=====  End of Project ready  ======*/
+  /*=====  End of Project ready  ======*/
 
 
 
@@ -147,8 +198,75 @@ if (project) {
     });
   });
 
-
-
   /*=====  End of Check work color  ======*/
+
+
+  /*===================================
+  =            Popup cards            =
+  ===================================*/
+
+  var card = document.querySelector(".card");
+  var cardWrapper = document.querySelector(".js-card-wrapper");
+  var visibleCardWrapper = false;
+  var gapBounding = 20;
+  var pageWidth = 0;
+  var pageHeight = 0;
+
+  $(".cards").on("mouseenter", ".card", function(event) {
+    visibleCardWrapper = true;
+    toggleVisibilityCardWrapper();
+    cardWrapper.appendChild(this.firstElementChild.cloneNode(true));
+
+    pageWidth = document.documentElement.clientWidth;
+    pageHeight = document.documentElement.clientHeight;
+    var cardMetriks = this.getBoundingClientRect();
+    var popupWidth = cardWrapper.offsetWidth;
+    var popupHeight = cardWrapper.offsetHeight;
+    var cardWidth = this.offsetWidth;
+    var cardHeight = this.offsetHeight;
+    var cardLeft = cardMetriks.left + pageXOffset;
+    var popupLeft = cardLeft - (popupWidth - cardWidth) / 2;
+    var cardTop = cardMetriks.top + pageYOffset;
+    var popupTop = cardTop - (popupHeight - cardHeight) / 2;
+
+    console.log(popupWidth, popupHeight);
+
+    if (popupLeft < gapBounding + pageXOffset) {
+      var left = gapBounding + pageXOffset;
+    } else if ((popupLeft + popupWidth) > (pageWidth - gapBounding + pageXOffset)) {
+      left = (popupLeft - (popupLeft + popupWidth - (pageWidth - gapBounding + pageXOffset)))
+    } else {
+      left = popupLeft;
+    }
+
+    if (popupTop < gapBounding + pageYOffset) {
+      var top = gapBounding + pageYOffset;
+    } else if ((popupTop + popupHeight) > (pageHeight - gapBounding + pageYOffset)) {
+      top = (popupTop - (popupTop + popupHeight - (pageHeight - gapBounding + pageYOffset)))
+    } else {
+      top = popupTop;
+    }
+
+    cardWrapper.style.cssText = "top: " + top + "px;\
+                              left: " + left + "px;";
+  });
+
+  $(cardWrapper).on("mouseleave", function(event) {
+    visibleCardWrapper = false;
+    toggleVisibilityCardWrapper();
+  });
+
+  function toggleVisibilityCardWrapper() {
+    if (visibleCardWrapper) {
+      cardWrapper.classList.add("popup-card--visible");
+    } else {
+      cardWrapper.classList.remove("popup-card--visible");
+
+      cardWrapper.innerHTML = '';
+      cardWrapper.style.cssText = '';
+    }
+  }
+
+  /*=====  End of Popup cards  ======*/
 
 });

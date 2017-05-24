@@ -101,6 +101,18 @@
   }
 }
 
+@supports (--aa: 0) {
+  .hello-slide__title span {
+    opacity: 0;
+    transition: ($duration * 1) var(--delay);
+    will-change: opacity, top;
+  }
+
+  .hello-slide--active .hello-slide__title span {
+    opacity: 1;
+  }
+}
+
 .hello-slide__text {
 
   @include media-breakpoint-up(sm) {

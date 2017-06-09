@@ -2,24 +2,24 @@ function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-$(window).one('load', function() {
+$(window).one('load', function () {
   document.body.classList.add('is-loaded');
-  setTimeout(function() {
+  setTimeout(function () {
     $('.loader').remove();
   }, 500);
 });
 
-$(document).on('click', 'a[href]:not([href^="#"])', function(event) {
+$(document).on('click', 'a[href]:not([href^="#"])', function (event) {
   event.preventDefault();
   var self = this;
   document.body.classList.remove('is-loaded');
 
-  setTimeout(function() {
+  setTimeout(function () {
     location.href = self.href;
   }, 270);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
   /*==================================
   =            Toggle nav            =
@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
   function toggleSiteCover() {
     document.body.classList.toggle('no-scroll');
     siteCover.classList.toggle('site-cover--opened');
-    Array.prototype.forEach.call(navTogglerIconItems, function(item) {
+    Array.prototype.forEach.call(navTogglerIconItems, function (item) {
       item.classList.toggle('nav-toggler__icon--hidden');
     });
   }
 
   if (navToggler) {
-    navToggler.addEventListener('click', function(event) {
+    navToggler.addEventListener('click', function (event) {
       event.preventDefault();
       toggleSiteCover();
     });
@@ -65,11 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (helloSlider) {
     var helloSlideTitleItems = document.querySelectorAll('.hello-slide__title');
-    Array.prototype.forEach.call(helloSlideTitleItems, function(helloSlideTitle) {
+    Array.prototype.forEach.call(helloSlideTitleItems, function (helloSlideTitle) {
       helloSlideTitle.innerHTML = helloSlideTitle.innerText.replace(/./g, '<span>$&</span>');
       var helloTitleLetters = helloSlideTitle.querySelectorAll('span');
 
-      Array.prototype.forEach.call(helloTitleLetters, function(letter) {
+      Array.prototype.forEach.call(helloTitleLetters, function (letter) {
         letter.style.setProperty('--delay', getRandomArbitrary(0, 1) + 's');
       });
     });
@@ -88,12 +88,12 @@ document.addEventListener('DOMContentLoaded', function() {
         modifier: 2,
         slideShadows: false
       },
-      onInit: function(swiper) {
-        setTimeout(function() {
+      onInit: function (swiper) {
+        setTimeout(function () {
           helloSliderActive(swiper);
         }, 500);
       },
-      onTransitionEnd: function(swiper) {
+      onTransitionEnd: function (swiper) {
         helloSliderActive(swiper);
       }
     });
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var helloReviewIndex = Math.floor(Math.random() * helloReviewsItems.length);
     helloReviewsItems[helloReviewIndex].classList.add('hello-reviews__item--active');
 
-    $(helloReviews).on('click', '.hello-reviews__reload', function() {
+    $(helloReviews).on('click', '.hello-reviews__reload', function () {
       var $self = $(this);
       var $helloReview = $self.closest('.hello-reviews__item');
       var helloReviewIndex = $helloReview.index();
@@ -168,8 +168,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var project = document.querySelector('.project');
 
   if (project) {
-    window.addEventListener('load', function() {
-      setTimeout(function() {
+    window.addEventListener('load', function () {
+      setTimeout(function () {
         project.classList.add('project--ready');
       }, 500);
     });
@@ -188,8 +188,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var colorThief = new ColorThief();
   var $parentWork = null;
 
-  $(window).on('load', function() {
-    $('.js-check-color-image').each(function(index, image) {
+  $(window).on('load', function () {
+    $('.js-check-color-image').each(function (index, image) {
       $parentWork = $(this).closest('.js-check-color-parent');
       $parentWork
         .find('.js-check-color-overlay')
@@ -212,49 +212,52 @@ document.addEventListener('DOMContentLoaded', function() {
   var pageWidth = 0;
   var pageHeight = 0;
 
-  $(".cards").on("mouseenter", ".card", function(event) {
-    visibleCardWrapper = true;
-    toggleVisibilityCardWrapper();
-    cardWrapper.appendChild(this.firstElementChild.cloneNode(true));
+  if (window.matchMedia("(min-width: 992px)").matches) {
+    $(".cards").on("mouseenter", ".card", function (event) {
+      visibleCardWrapper = true;
+      toggleVisibilityCardWrapper();
+      cardWrapper.appendChild(this.firstElementChild.cloneNode(true));
 
-    pageWidth = document.documentElement.clientWidth;
-    pageHeight = document.documentElement.clientHeight;
-    var cardMetriks = this.getBoundingClientRect();
-    var popupWidth = cardWrapper.offsetWidth;
-    var popupHeight = cardWrapper.offsetHeight;
-    var cardWidth = this.offsetWidth;
-    var cardHeight = this.offsetHeight;
-    var cardLeft = cardMetriks.left + pageXOffset;
-    var popupLeft = cardLeft - (popupWidth - cardWidth) / 2;
-    var cardTop = cardMetriks.top + pageYOffset;
-    var popupTop = cardTop - (popupHeight - cardHeight) / 2;
+      pageWidth = document.documentElement.clientWidth;
+      pageHeight = document.documentElement.clientHeight;
+      var cardMetriks = this.getBoundingClientRect();
+      var popupWidth = cardWrapper.offsetWidth;
+      var popupHeight = cardWrapper.offsetHeight;
+      var cardWidth = this.offsetWidth;
+      var cardHeight = this.offsetHeight;
+      var cardLeft = cardMetriks.left + pageXOffset;
+      var popupLeft = cardLeft - (popupWidth - cardWidth) / 2;
+      var cardTop = cardMetriks.top + pageYOffset;
+      var popupTop = cardTop - (popupHeight - cardHeight) / 2;
 
-    console.log(popupWidth, popupHeight);
+      console.log(popupWidth, popupHeight);
 
-    if (popupLeft < gapBounding + pageXOffset) {
-      var left = gapBounding + pageXOffset;
-    } else if ((popupLeft + popupWidth) > (pageWidth - gapBounding + pageXOffset)) {
-      left = (popupLeft - (popupLeft + popupWidth - (pageWidth - gapBounding + pageXOffset)))
-    } else {
-      left = popupLeft;
-    }
+      if (popupLeft < gapBounding + pageXOffset) {
+        var left = gapBounding + pageXOffset;
+      } else if ((popupLeft + popupWidth) > (pageWidth - gapBounding + pageXOffset)) {
+        left = (popupLeft - (popupLeft + popupWidth - (pageWidth - gapBounding + pageXOffset)))
+      } else {
+        left = popupLeft;
+      }
 
-    if (popupTop < gapBounding + pageYOffset) {
-      var top = gapBounding + pageYOffset;
-    } else if ((popupTop + popupHeight) > (pageHeight - gapBounding + pageYOffset)) {
-      top = (popupTop - (popupTop + popupHeight - (pageHeight - gapBounding + pageYOffset)))
-    } else {
-      top = popupTop;
-    }
+      if (popupTop < gapBounding + pageYOffset) {
+        var top = gapBounding + pageYOffset;
+      } else if ((popupTop + popupHeight) > (pageHeight - gapBounding + pageYOffset)) {
+        top = (popupTop - (popupTop + popupHeight - (pageHeight - gapBounding + pageYOffset)))
+      } else {
+        top = popupTop;
+      }
 
-    cardWrapper.style.cssText = "top: " + top + "px;\
-                              left: " + left + "px;";
-  });
+      cardWrapper.style.cssText = 'top: ' + top + 'px; left: ' + left + 'px;';
+    });
 
-  $(cardWrapper).on("mouseleave", function(event) {
-    visibleCardWrapper = false;
-    toggleVisibilityCardWrapper();
-  });
+    $(cardWrapper).on("mouseleave", function (event) {
+      visibleCardWrapper = false;
+      toggleVisibilityCardWrapper();
+    });
+  }
+
+
 
   function toggleVisibilityCardWrapper() {
     if (visibleCardWrapper) {

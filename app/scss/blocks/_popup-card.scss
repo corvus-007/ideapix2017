@@ -2,7 +2,8 @@
   position: absolute;
   display: none;
   flex-direction: column;
-  max-width: 400px;
+  width: 400px;
+  font-size: rem($font-size--large);
   background-color: #fff;
   box-shadow: 0 6px 12px rgba(#000, 0.3);
   visibility: hidden;

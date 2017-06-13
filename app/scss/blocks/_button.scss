@@ -61,6 +61,17 @@
   }
 }
 
+@mixin createButtonColorsGreen() {
+  color: $base-color;
+  border-color: $success-color;
+
+  &:hover,
+  &:focus {
+    color: $base-color;
+    background-color: $success-color;
+  }
+}
+
 .button {
   @include createButton();
   @include createButtonColors();

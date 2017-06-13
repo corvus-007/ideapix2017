@@ -230,8 +230,6 @@ document.addEventListener('DOMContentLoaded', function () {
       var cardTop = cardMetriks.top + pageYOffset;
       var popupTop = cardTop - (popupHeight - cardHeight) / 2;
 
-      console.log(popupWidth, popupHeight);
-
       if (popupLeft < gapBounding + pageXOffset) {
         var left = gapBounding + pageXOffset;
       } else if ((popupLeft + popupWidth) > (pageWidth - gapBounding + pageXOffset)) {

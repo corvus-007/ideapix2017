@@ -9,7 +9,7 @@
   margin-bottom: ($grid-gutter-width / 2);
   font-size: rem($font-size--large);
   background-color: $white-color;
-  box-shadow: 0 3px 6px rgba($base-color, 0.1);
+  border-radius: $border-radius;
 
   @media (min-width: 480px) {
     margin-right: ($grid-gutter-width / 2);
@@ -120,7 +120,7 @@
   }
 
   &--demo {
-    @include createButtonColorsRed();
+    @include createButtonColorsGreen();
   }
 
   @include media-breakpoint-up(sm) {

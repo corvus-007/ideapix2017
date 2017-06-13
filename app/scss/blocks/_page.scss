@@ -1,3 +1,9 @@
+.page {
+  &--gray {
+    background-color: $light-color;
+  }
+}
+
 .page-body {
   padding-top: ($grid-gutter-width * 4);
 

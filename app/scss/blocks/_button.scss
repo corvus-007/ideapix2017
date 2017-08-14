@@ -18,6 +18,16 @@
   cursor: pointer;
 }
 
+@mixin createButtonSmall() {
+  padding: rem(8) rem(28);
+  font-size: rem($font-size--small);
+}
+
+@mixin createButtonLarge() {
+  padding: rem(18) rem(40);
+  font-size: rem($font-size--large);
+}
+
 @mixin createButtonColors() {
   color: $white-color;
   border-color: $white-color;
@@ -26,10 +36,6 @@
   &:focus {
     color: $dark-color;
     background-color: $white-color;
-  }
-
-  &:active {
-
   }
 }
 
@@ -42,10 +48,6 @@
     color: $white-color;
     background-color: $dark-color;
   }
-
-  &:active {
-
-  }
 }
 
 @mixin createButtonColorsRed() {
@@ -57,9 +59,16 @@
     color: $white-color;
     background-color: $danger-color;
   }
+}
 
-  &:active {
+@mixin createButtonColorsGreen() {
+  color: $base-color;
+  border-color: $success-color;
 
+  &:hover,
+  &:focus {
+    color: $base-color;
+    background-color: $success-color;
   }
 }
 
